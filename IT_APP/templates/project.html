@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}All Completed Projects{% endblock %}
+
+{% block content %}
+<style>
+    .project-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .project-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-img {
+        position: relative;
+        width: 100%;
+        height: 300px; /* Adjust height to control the size of images */
+        overflow: hidden;
+    }
+
+    .project-image {
+        object-fit: cover; /* Ensures the image covers the area without being cut off */
+        width: 100%;
+        height: 100%;
+    }
+
+    .project-item:hover .project-img {
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+    }
+
+    .project-content {
+        background: rgba(0, 0, 0, 0.6);
+        bottom: 0;
+        left: 0;
+        padding: 20px;
+        position: absolute;
+        text-align: center;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+        width: 100%;
+    }
+
+    .project-item:hover .project-content {
+        transform: translateY(0);
+    }
+
+    .project-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 10px 0;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .project-description {
+        font-size: 1.1em;
+        margin: 0;
+        line-height: 1.5;
+        font-weight: 300;
+        color: #f1f1f1;
+    }
+
+    .badge {
+        font-size: 1em;
+        padding: 10px 15px;
+        background-color: #28a745;  /* Green badge for 'completed' status */
+        color: white;
+        border-radius: 5px;
+        margin-top: 10px;
+        text-transform: uppercase;
+    }
+</style>
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">All Completed Projects</h2>
+    <div class="row mt-3">
+        {% for project in all_projects %}
+            <div class="col-md-4 col-lg-3 wow fadeIn" data-wow-delay=".3s">
+                <div class="project-item">
+                    <div class="project-img position-relative">
+                        <!-- Rounded corners and subtle hover effect for images -->
+                        <img src="{{ project.image.url }}" class="img-fluid w-100 rounded shadow-lg project-image" alt="{{ project.title }}">
+                        <div class="project-content position-absolute w-100 h-100 d-flex justify-content-center align-items-center">
+                            <!-- Centered text overlay with smooth hover transition -->
+                            <a href="#" class="text-center text-white project-overlay">
+                                <h4 class="text-white mb-2 project-title">{{ project.title }}</h4>
+                                <p class="m-0 text-light project-description">{{ project.description|truncatewords:12 }}</p>
+                                <span class="badge bg-success mt-2">{{ project.status }}</span>  <!-- Display status -->
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+        
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5" style="position: relative; overflow: hidden;">
+        <!-- Background Video -->
+        <video class="w-100" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="{% static 'videos/2.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Overlay to Darken the Video for Better Text Contrast -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
+    
+        <!-- Content Over the Video -->
+        <div class="container text-center py-5" style="position: relative; z-index: 1;">
+            <h1 class="display-2 text-white mb-4 animated slideInDown">About Us</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item" aria-current="page">About</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    
+    
+    
+    <!-- Page Header End -->
+
+
+    <!-- Fact Start -->
+    <div class="container-fluid bg-secondary py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
+                    <div class="d-flex counter">
+                        <h1 class="me-3 text-primary counter-value">99</h1>
+                        <h5 class="text-white mt-1">Success in getting happy customers</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
+                    <div class="d-flex counter">
+                        <h1 class="me-3 text-primary counter-value">25</h1>
+                        <h5 class="text-white mt-1">Thousands of successful businesses</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
+                    <div class="d-flex counter">
+                        <h1 class="me-3 text-primary counter-value">120</h1>
+                        <h5 class="text-white mt-1">Total clients who love HighTech</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
+                    <div class="d-flex counter">
+                        <h1 class="me-3 text-primary counter-value">5</h1>
+                        <h5 class="text-white mt-1">Stars reviews given by satisfied clients</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fact End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 my-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                    <div class="h-100 position-relative">
+                        <img src="{% static 'img/about-1.jpg' %}" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
+                        <div class="position-absolute w-75" style="top: 25%; left: 25%;">
+                            <img src="{% static 'img/about-2.jpg' %}" class="img-fluid w-100 rounded" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                    <h5 class="text-primary">Welcome to CENTX FORMATION TECHNOLOGIES</h5>
+                    <h1 class="mb-4">Innovating Your Digital World</h1>
+                    <p>CENTX FORMATION TECHNOLOGIES is at the forefront of providing innovative IT solutions that drive success and efficiency in the digital age. Our team is committed to excellence, offering cutting-edge technology solutions in web development, IT consulting, and software solutions tailored to meet your business needs.</p>
+                    <p class="mb-4">With years of experience in the technology sector, we have established ourselves as a trusted partner for businesses looking to embrace digital transformation. Our mission is to provide exceptional service and create lasting partnerships that fuel growth and technological advancement.</p>
+                    <a href="#services" class="btn btn-primary rounded-pill px-5 py-3 text-white">Learn More About Our Services</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+<!-- Core Values Section -->
+<div class="container-fluid py-5" style="background: linear-gradient(to right, #0a3d62, #1e90ff); color: white;">
+    <div class="container text-center">
+        <h5 class="text-warning text-uppercase">Our Core Values</h5>
+        <h2 class="mb-5 font-weight-bold">What Drives Us</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded shadow-sm bg-white text-dark text-center">
+                    <h3 class="text-primary mb-3"><i class="fas fa-lightbulb"></i> Innovation</h3>
+                    <p>We push the boundaries of technology to create cutting-edge solutions tailored to your needs.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded shadow-sm bg-white text-dark text-center">
+                    <h3 class="text-primary mb-3"><i class="fas fa-handshake"></i> Integrity</h3>
+                    <p>We believe in transparency, accountability, and building trust with our clients and partners.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded shadow-sm bg-white text-dark text-center">
+                    <h3 class="text-primary mb-3"><i class="fas fa-award"></i> Excellence</h3>
+                    <p>We deliver high-quality services that drive innovation and exceed expectations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Core Values End -->
+
+<!-- Why Choose Us Section -->
+<div class="container-fluid py-5 bg-dark text-light">
+    <div class="container text-center">
+        <h5 class="text-warning text-uppercase">Why Choose CENTX FORMATION TECHNOLOGIES?</h5>
+        <h2 class="mb-5 font-weight-bold">Your Trusted Technology Partner</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded shadow-sm bg-secondary text-white text-center">
+                    <h4 class="mb-3"><i class="fas fa-users"></i> Expert Team</h4>
+                    <p>Our experienced professionals bring a wealth of knowledge to every project.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded shadow-sm bg-secondary text-white text-center">
+                    <h4 class="mb-3"><i class="fas fa-cogs"></i> Tailored Solutions</h4>
+                    <p>We provide customized solutions to match your unique business needs.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded shadow-sm bg-secondary text-white text-center">
+                    <h4 class="mb-3"><i class="fas fa-chart-line"></i> Proven Track Record</h4>
+                    <p>Our portfolio showcases successful projects that have transformed businesses.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Why Choose Us End -->
+
+
+<!-- Contact Us CTA Start -->
+<div class="container-fluid bg-primary text-white py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Let’s Start Your Digital Transformation</h2>
+        <p class="mb-4">Get in touch with us to learn more about how our innovative solutions can take your business to the next level.</p>
+        <a href="#contact" class="btn btn-light rounded-pill px-5 py-3">Contact Us</a>
+    </div>
+</div>
+<!-- Contact Us CTA End -->
+
+
+
+    <!-- Team Start -->
+    <div class="container-fluid team py-5 mb-5" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                <h5 class="text-primary">Our Team</h5>
+                <h1 class="display-4 font-weight-bold">Meet Our Team of Experts</h1>
+            </div>
+            <div class="row text-center">
+                <!-- Team Member 1 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                    <div class="team-member">
+                        <img src="{% static 'img/team-1.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 1">
+                        <div class="team-info mt-3">
+                            <h4 class="text-secondary">John Doe</h4>
+                            <p class="text-muted">Project Manager</p>
+                            <p class="team-bio">John has over 10 years of experience in project management, leading teams to success.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                    <div class="team-member">
+                        <img src="{% static 'img/team-2.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 2">
+                        <div class="team-info mt-3">
+                            <h4 class="text-secondary">Jane Smith</h4>
+                            <p class="text-muted">Lead Developer</p>
+                            <p class="team-bio">Jane is passionate about developing innovative solutions and building scalable apps.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                    <div class="team-member">
+                        <img src="{% static 'img/team-3.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 3">
+                        <div class="team-info mt-3">
+                            <h4 class="text-secondary">Sam Wilson</h4>
+                            <p class="text-muted">UI/UX Designer</p>
+                            <p class="team-bio">Sam excels at creating intuitive designs that offer the best user experience possible.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                    <div class="team-member">
+                        <img src="{% static 'img/team-4.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 4">
+                        <div class="team-info mt-3">
+                            <h4 class="text-secondary">Alex Johnson</h4>
+                            <p class="text-muted">Marketing Specialist</p>
+                            <p class="team-bio">Alex creates effective marketing strategies that connect brands with their target audience.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 5 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                    <div class="team-member">
+                        <img src="{% static 'img/team-2.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 5">
+                        <div class="team-info mt-3">
+                            <h4 class="text-secondary">Maria Davis</h4>
+                            <p class="text-muted">Cyber Security Expert</p>
+                            <p class="team-bio">Maria ensures that all our systems and client data are safe from cyber threats.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 6 -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                    <div class="team-member">
+                        <img src="{% static 'img/team-1.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 6">
+                        <div class="team-info mt-3">
+                            <h4 class="text-secondary">Emily White</h4>
+                            <p class="text-muted">Graphic Designer</p>
+                            <p class="team-bio">Emily creates stunning visuals that help brands tell their story effectively.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+{% endblock %}
