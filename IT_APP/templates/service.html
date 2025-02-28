@@ -5,6 +5,147 @@
 
 {% block content %}
 <!-- Services Start -->
+
+        
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5" style="position: relative; overflow: hidden;">
+        <!-- Background Video -->
+        <video class="w-100" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="{% static 'videos/2.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Overlay to Darken the Video for Better Text Contrast -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
+    
+        <!-- Content Over the Video -->
+        <div class="container text-center py-5" style="position: relative; z-index: 1;">
+            <h1 class="display-2 text-white mb-4 animated slideInDown">Services</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    
+    
+    
+    <!-- Page Header End -->
+
+
+    <!-- Fact Start -->
+    <div class="container-fluid bg-secondary py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
+                    <div class="d-flex counter">
+                        <h1 class="me-3 text-primary counter-value">99</h1>
+                        <h5 class="text-white mt-1">Success in getting happy customers</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
+                    <div class="d-flex counter">
+                        <h1 class="me-3 text-primary counter-value">25</h1>
+                        <h5 class="text-white mt-1">Thousands of successful businesses</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
+                    <div class="d-flex counter">
+                        <h1 class="me-3 text-primary counter-value">120</h1>
+                        <h5 class="text-white mt-1">Total clients who love HighTech</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
+                    <div class="d-flex counter">
+                        <h1 class="me-3 text-primary counter-value">5</h1>
+                        <h5 class="text-white mt-1">Stars reviews given by satisfied clients</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<section class="product-overview">
+    <div class="overview-container">
+        <h2 class="overview-title">Innovative IT Solutions for Business Growth</h2>
+        <p class="overview-text">
+            At <strong>CENTX FORMATION TECHNOLOGIES</strong>, we believe in the power of technology to transform businesses. Our solutions are designed to optimize efficiency, strengthen security, and drive long-term success. Whether you are looking for seamless digital transformation or expert IT consulting, we provide reliable and future-ready solutions to help you stay ahead.
+        </p>
+    </div>
+</section>
+
+<section class="tech-advantage">
+    <div class="advantage-container">
+        <h2 class="advantage-title">Technology That Works for You</h2>
+        <p class="advantage-text">
+            In today’s fast-paced world, businesses need agile, scalable, and secure IT solutions. We specialize in providing customized strategies that align with your goals, ensuring smooth operations and enhanced productivity. Partner with us and experience cutting-edge innovation tailored for success.
+        </p>
+    </div>
+</section>
+
+<style>
+    /* Product Overview Section */
+    .product-overview {
+        background: linear-gradient(to right, #f8f9fa, #e9ecef);
+        padding: 50px 20px;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    .overview-container {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .overview-title {
+        font-size: 2rem;
+        color: #222;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .overview-text {
+        font-size: 1.2rem;
+        color: #444;
+        line-height: 1.6;
+    }
+
+    /* Tech Advantage Section */
+    .tech-advantage {
+        background: #ffffff;
+        padding: 50px 20px;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    .advantage-container {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .advantage-title {
+        font-size: 1.9rem;
+        color: #222;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .advantage-text {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .overview-container, .advantage-container {
+            max-width: 90%;
+        }
+    }
+</style>
+
 <div class="bg-primary text-white py-2">
     <marquee behavior="scroll" direction="left" scrollamount="8" class="fs-4 fw-bold">
         <i class="fas fa-laptop-code"></i> Our IT Services:

@@ -867,29 +867,6 @@ h4 {
 
 <!-- Services End -->
 
-<!-- products -->
-
-<div class="container py-5">
-    <h2 class="text-center">Discover Your Perfect Product Today!</h2> <!-- Updated title -->
-    <div class="row">
-        {% for product in products %}
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.description }}</p>
-                    <p class="card-text">{{ product.price }} USD</p>
-                    <a href="{% url 'request_product' product.id %}" class="btn btn-primary">Request This Product</a>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    <div class="text-center mt-4">
-        <a href="{% url 'all_products' %}" class="btn btn-success">View More Products</a>
-    </div>
-</div>
 
 
 <!-- Project Start -->

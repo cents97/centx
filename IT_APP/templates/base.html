@@ -84,6 +84,7 @@
                         <a href="{% url 'index' %}" class="nav-item nav-link active text-secondary">Home</a>
                         <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
                         <a href="{% url 'service' %}" class="nav-item nav-link">Services</a>
+                        <a href="{% url 'all_products' %}" class="nav-item nav-link">Products</a>
                         <a href="{% url 'team' %}" class="nav-item nav-link">Team</a>
                         <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                         <a href="{% url 'admin:login' %}?next=/admin/" class="nav-item nav-link" style="color: #fafafa;">Admin Login</a>
@@ -210,20 +211,23 @@
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
-    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
-    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
-    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
-    <script src=" {% static 'js/jquery.min.js' %}"></script>
+    <!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Other Libraries -->
+<script src="{% static 'lib/wow/wow.min.js' %}"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
 
+<!-- Template Javascript -->
+<script src="{% static 'js/main.js'%}"></script>
 
-    <!-- Template Javascript -->
-    <script src="{% static 'js/main.js'%}"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5472106983159959"
-     crossorigin="anonymous"></script>
+<!-- Google Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5472106983159959"
+ crossorigin="anonymous"></script>
+
 </body>
 
 </html>
