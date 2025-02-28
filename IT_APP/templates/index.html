@@ -977,28 +977,6 @@ h4 {
 </div>
 
 
-<script>
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent page reload
-    
-        let formData = new FormData(this);
-    
-        fetch("{% url 'save_message' %}", {
-            method: "POST",
-            body: formData,
-            headers: {
-                "X-Requested-With": "XMLHttpRequest"
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert(data.message);
-            document.getElementById("contactForm").reset();
-        })
-        .catch(error => console.error("Error:", error));
-    });
-    </script>
-
 
 
 {% endblock %}
