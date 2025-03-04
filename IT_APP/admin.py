@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, ProductRequest, Project
+from .models import Product, ProductRequest, Project, Service, ContactMessage, Testimonial, TeamMember
 
 # Register your models here.
 
@@ -11,8 +11,11 @@ admin.site.register(ProductRequest)
 
 admin.site.register(Project)
 
-from django.contrib import admin
-from .models import ContactMessage
+admin.site.register(Service)
+
+admin.site.register(Testimonial)
+admin.site.register(TeamMember)
+
 
 @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):

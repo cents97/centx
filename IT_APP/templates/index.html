@@ -513,7 +513,7 @@ h4 {
                 </div>
 
                 <!-- CTA Button -->
-                <a href="#contact" class="btn btn-primary btn-lg mt-4 px-4 py-2 fw-bold shadow">
+                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg mt-4 px-4 py-2 fw-bold shadow">
                     Get in Touch <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
@@ -526,346 +526,6 @@ h4 {
 
 
 <!-- About End -->
-
-<!-- Services Start -->
-<div class="bg-primary text-white py-2">
-    <marquee behavior="scroll" direction="left" scrollamount="8" class="fs-4 fw-bold">
-        <i class="fas fa-laptop-code"></i> Our IT Services:
-        <i class="fas fa-check-circle"></i> Front Desk Services |
-        <i class="fas fa-shield-alt"></i> Networking Security |
-        <i class="fas fa-cogs"></i> Software Services |
-        <i class="fas fa-tools"></i> Remote Support |
-        <i class="fas fa-wrench"></i> Computer Repair |
-        <i class="fas fa-laptop"></i> Software Development |
-        <i class="fas fa-code"></i> Website Design & Development |
-        <i class="fas fa-database"></i> Data Recovery |
-        <i class="fas fa-robot"></i> IT Automation |
-        <i class="fas fa-network-wired"></i> Network Management |
-        <i class="fas fa-server"></i> Data Storage |
-        <i class="fas fa-comments"></i> Communication Management |
-        <i class="fas fa-eye"></i> Monitoring Services |
-        <i class="fas fa-keyboard"></i> Data Entry |
-        <i class="fas fa-mobile-alt"></i> Mobile App Development |
-        <i class="fas fa-share-alt"></i> Social Media Management |
-        <i class="fas fa-paint-brush"></i> Graphic Design |
-        <i class="fas fa-chart-line"></i> Market Research |
-        <i class="fas fa-bullhorn"></i> Online Marketing
-    </marquee>
-</div>
-
-<div class="container-fluid services py-5 mb-5">
-    <div class="container">
-
-        <div class="row g-5 services-inner">
-            <!-- Web Development & Management -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-laptop-code fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Web Development & Management</h4>
-                        <p class="text-muted">Custom websites and efficient management to keep your business running
-                            online.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Get
-                            Started</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile App Development -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-mobile-alt fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Mobile App Development</h4>
-                        <p class="text-muted">Build innovative mobile applications for Android & iOS.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Start Your
-                            App</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cybersecurity -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-shield-alt fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Cybersecurity</h4>
-                        <p class="text-muted">Protect your business from cyber threats with top-tier security solutions.
-                        </p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Secure Your
-                            Data</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Front Desk Services -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-concierge-bell fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Front Desk Services</h4>
-                        <p class="text-muted">Efficient front desk management to streamline customer interactions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Optimize
-                            Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Networking Security -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-network-wired fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Networking Security</h4>
-                        <p class="text-muted">Secure and optimize your network for seamless connectivity.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Improve
-                            Network</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Recovery -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-database fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Data Recovery</h4>
-                        <p class="text-muted">Recover lost data with our advanced recovery solutions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Restore Your
-                            Data</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- IT Automation -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-robot fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">IT Automation</h4>
-                        <p class="text-muted">Automate IT processes for efficiency and cost reduction.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Automate
-                            Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Communication Management -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-comments fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Communication Management</h4>
-                        <p class="text-muted">Improve business communications with modern solutions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Entry -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-keyboard fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Data Entry</h4>
-                        <p class="text-muted">Accurate and fast data entry solutions for businesses.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Graphic Design -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-paint-brush fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Graphic Design</h4>
-                        <p class="text-muted">Creative designs to make your brand stand out.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Online Marketing -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-bullhorn fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Online Marketing</h4>
-                        <p class="text-muted">Boost your business with strategic online marketing solutions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Market Research -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-chart-line fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Market Research</h4>
-                        <p class="text-muted">Analyze trends and make data-driven business decisions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Storage -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-hdd fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Data Storage</h4>
-                        <p class="text-muted">Secure cloud and local data storage solutions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Computer Repair -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-tools fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Computer Repair</h4>
-                        <p class="text-muted">Expert computer repairs and maintenance.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Recovery -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-database fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Data Recovery</h4>
-                        <p class="text-muted">Recover lost files with our professional recovery services.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Front Desk Services -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-concierge-bell fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Front Desk Services</h4>
-                        <p class="text-muted">Efficient front desk management for businesses.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Media Management -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-share-alt fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Social Media Management</h4>
-                        <p class="text-muted">Grow your online presence with expert social media management.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-<!-- Services End -->
 
 
 
@@ -919,64 +579,28 @@ h4 {
 
 
 <!-- Testimonial Start -->
-<div class="container-fluid testimonial py-5" style="background-color: #f8f9fa;">
+<div class="container-fluid testimonials py-5 mb-5">
     <div class="container">
-        <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-            <h5 class="text-primary">Testimonials</h5>
-            <h1 class="display-4 font-weight-bold">What Our Clients Say</h1>
+        <div class="text-center mb-5">
+            <h2 class="text-dark">What Our Clients Say</h2>
+            <p class="text-muted">Here's what some of our satisfied clients have to say about our services.</p>
         </div>
-        <div class="row justify-content-center">
-            <!-- Testimonial 1 -->
-            <div class="col-md-6 col-lg-4 mb-4 wow fadeIn" data-wow-delay=".3s">
-                <div class="testimonial-card rounded shadow-sm p-4">
-                    <div class="testimonial-img mb-4">
-                        <img src="{% static 'img/testimonial-1.jpg' %}" class="img-fluid rounded-circle" alt="Client 1"
-                            style="width: 80px; height: 80px;">
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="text-muted">“The project exceeded our expectations. The team was incredibly
-                            professional, and the results speak for themselves. We will definitely work with them
-                            again.”</p>
-                        <h5 class="font-weight-bold">John Doe</h5>
-                        <p class="text-primary">CEO, Company</p>
-                    </div>
+        <div class="row g-5">
+            {% for testimonial in testimonials %}
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                <div class="testimonial-item bg-light shadow-lg rounded-4 p-4 text-center transform-hover d-flex flex-column justify-content-between mb-4">
+                    {% if testimonial.image %}
+                        <img src="{{ testimonial.image.url }}" class="img-fluid rounded-circle mx-auto mb-4" style="width: 100px; height: 100px;" alt="{{ testimonial.name }}">
+                    {% endif %}
+                    <p class="text-muted mb-4"><i class="fa fa-quote-left text-primary"></i> {{ testimonial.message }} <i class="fa fa-quote-right text-primary"></i></p>
+                    <h5 class="text-dark mb-1">{{ testimonial.name }}</h5>
+                    <p class="text-muted">{{ testimonial.position }}</p>
                 </div>
             </div>
-            <!-- Testimonial 2 -->
-            <div class="col-md-6 col-lg-4 mb-4 wow fadeIn" data-wow-delay=".5s">
-                <div class="testimonial-card rounded shadow-sm p-4">
-                    <div class="testimonial-img mb-4">
-                        <img src="{% static 'img/testimonial-2.jpg' %}" class="img-fluid rounded-circle" alt="Client 2"
-                            style="width: 80px; height: 80px;">
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="text-muted">“Amazing service! The team was responsive and attentive to every detail.
-                            Our expectations were not only met, but far exceeded.”</p>
-                        <h5 class="font-weight-bold">Jane Smith</h5>
-                        <p class="text-primary">Marketing Manager, Brand</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Testimonial 3 -->
-            <div class="col-md-6 col-lg-4 mb-4 wow fadeIn" data-wow-delay=".7s">
-                <div class="testimonial-card rounded shadow-sm p-4">
-                    <div class="testimonial-img mb-4">
-                        <img src="{% static 'img/testimonial-3.jpg' %}" class="img-fluid rounded-circle" alt="Client 3"
-                            style="width: 80px; height: 80px;">
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="text-muted">“Fantastic results! We are so happy with the work. Highly recommend this
-                            team for anyone looking to achieve great results.”</p>
-                        <h5 class="font-weight-bold">Sam Wilson</h5>
-                        <p class="text-primary">Founder, Tech Solutions</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
-
-
 
 
 {% endblock %}

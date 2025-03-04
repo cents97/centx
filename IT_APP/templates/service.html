@@ -144,6 +144,64 @@
             max-width: 90%;
         }
     }
+    
+    /* Services Section Styling */
+.services {
+    background-color: #f8f9fa;
+}
+
+.services-inner {
+    display: flex;
+    justify-content: center;
+}
+
+.services-item {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+}
+
+.services-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.services-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #007bff;
+}
+
+.services-content-icon i {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.services-item:hover .services-content-icon i {
+    color: #0056b3;
+    transform: scale(1.1);
+}
+
+.services h4 {
+    font-weight: 600;
+    color: #343a40;
+}
+
+.services p {
+    font-size: 15px;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
 </style>
 
 <div class="bg-primary text-white py-2">
@@ -171,310 +229,36 @@
     </marquee>
 </div>
 
+{% load static %}
+
 <div class="container-fluid services py-5 mb-5">
     <div class="container">
-
         <div class="row g-5 services-inner">
-            <!-- Web Development & Management -->
+            {% for service in services %}
             <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
+                <div class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
+                    {% if service.image %}
+                        <img src="{{ service.image.url }}" class="img-fluid" alt="{{ service.title }}">
+                    {% endif %}
                     <div class="p-3 text-center flex-grow-1">
                         <div class="services-content-icon mb-3">
-                            <i class="fas fa-laptop-code fa-5x text-primary"></i>
+                            <i class="{{ service.icon }} fa-5x text-primary"></i>
                         </div>
-                        <h4 class="mb-2 text-dark">Web Development & Management</h4>
-                        <p class="text-muted">Custom websites and efficient management to keep your business running
-                            online.</p>
+                        <h4 class="mb-2 text-dark">{{ service.title }}</h4>
+                        <p class="text-muted">{{ service.description }}</p>
                     </div>
                     <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Get
-                            Started</a>
+                        <a href="{{ service.link }}" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">
+                            Contact Us
+                        </a>
                     </div>
                 </div>
             </div>
-
-            <!-- Mobile App Development -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-mobile-alt fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Mobile App Development</h4>
-                        <p class="text-muted">Build innovative mobile applications for Android & iOS.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Start Your
-                            App</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cybersecurity -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-shield-alt fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Cybersecurity</h4>
-                        <p class="text-muted">Protect your business from cyber threats with top-tier security solutions.
-                        </p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Secure Your
-                            Data</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Front Desk Services -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-concierge-bell fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Front Desk Services</h4>
-                        <p class="text-muted">Efficient front desk management to streamline customer interactions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Optimize
-                            Service</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Networking Security -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-network-wired fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Networking Security</h4>
-                        <p class="text-muted">Secure and optimize your network for seamless connectivity.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Improve
-                            Network</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Recovery -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-database fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Data Recovery</h4>
-                        <p class="text-muted">Recover lost data with our advanced recovery solutions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Restore Your
-                            Data</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- IT Automation -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-robot fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">IT Automation</h4>
-                        <p class="text-muted">Automate IT processes for efficiency and cost reduction.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#contact" class="btn btn-primary text-white px-4 py-2 rounded-pill w-75">Automate
-                            Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Communication Management -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-comments fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Communication Management</h4>
-                        <p class="text-muted">Improve business communications with modern solutions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Entry -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-keyboard fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Data Entry</h4>
-                        <p class="text-muted">Accurate and fast data entry solutions for businesses.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Graphic Design -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-paint-brush fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Graphic Design</h4>
-                        <p class="text-muted">Creative designs to make your brand stand out.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Online Marketing -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-bullhorn fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Online Marketing</h4>
-                        <p class="text-muted">Boost your business with strategic online marketing solutions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Market Research -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-chart-line fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Market Research</h4>
-                        <p class="text-muted">Analyze trends and make data-driven business decisions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Storage -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-hdd fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Data Storage</h4>
-                        <p class="text-muted">Secure cloud and local data storage solutions.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Computer Repair -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-tools fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Computer Repair</h4>
-                        <p class="text-muted">Expert computer repairs and maintenance.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Recovery -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-database fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Data Recovery</h4>
-                        <p class="text-muted">Recover lost files with our professional recovery services.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Front Desk Services -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-concierge-bell fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Front Desk Services</h4>
-                        <p class="text-muted">Efficient front desk management for businesses.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Media Management -->
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                <div
-                    class="services-item bg-light shadow-sm rounded-4 overflow-hidden transform-hover d-flex flex-column mb-3">
-                    <div class="p-3 text-center flex-grow-1">
-                        <div class="services-content-icon mb-3">
-                            <i class="fas fa-share-alt fa-5x text-primary"></i>
-                        </div>
-                        <h4 class="mb-2 text-dark">Social Media Management</h4>
-                        <p class="text-muted">Grow your online presence with expert social media management.</p>
-                    </div>
-                    <div class="text-center pb-3">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2 w-75">Read More</a>
-                    </div>
-                </div>
-            </div>
-
+            {% endfor %}
         </div>
     </div>
 </div>
+
 
 
 {% endblock %}

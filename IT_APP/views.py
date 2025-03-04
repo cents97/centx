@@ -1,36 +1,47 @@
 from django.shortcuts import render
-from .models import Product, ProductRequest
+from .models import Product,  ContactMessage, Service, TeamMember
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from .models import Product, Project
 from .forms import ProductRequestForm
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import ContactMessage
 import json
 
 # Create your views here.
 
+from django.shortcuts import render
+from .models import Product, Project, Testimonial
+
 def index(request):
-    products = Product.objects.all()[:6]  # Get only 6 products
+    
     featured_projects = Project.objects.filter(status='completed')[:6]  # Get only 6 completed projects
+    testimonials = Testimonial.objects.all().order_by('-created_at')[:3]  # Get the most recent 3 testimonials
+
     return render(request, 'index.html', {
         'featured_projects': featured_projects,
-        'products': products
+        
+        'testimonials': testimonials  # Pass testimonials to the template
     })
 
 
-
- 
-
 def about(request):
-    return render(request, 'about.html')
+    # Fetch team members and testimonials from the database
+    team_members = TeamMember.objects.all()
+    testimonials = Testimonial.objects.all()
+
+    return render(request, 'about.html', {
+        'team_members': team_members,
+        'testimonials': testimonials,
+    })
 
 def service(request):
-    return render(request, 'service.html')
+    services = Service.objects.all()
+    return render(request, 'service.html', {'services': services})
 
 def team(request):
-    return render(request, 'team.html')
+    team_members = TeamMember.objects.all()
+    return render(request, 'team.html', {'team_members': team_members})
 
 def contact(request):
     return render(request, 'contact.html')

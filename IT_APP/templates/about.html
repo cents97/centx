@@ -164,80 +164,37 @@
 
 
     <!-- Team Start -->
-    <div class="container-fluid team py-5 mb-5" style="background-color: #f8f9fa;">
-        <div class="container">
-            <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                <h5 class="text-primary">Our Team</h5>
-                <h1 class="display-4 font-weight-bold">Meet Our Team of Experts</h1>
-            </div>
-            <div class="row text-center">
-                <!-- Team Member 1 -->
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                    <div class="team-member">
-                        <img src="{% static 'img/team-1.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 1">
-                        <div class="team-info mt-3">
-                            <h4 class="text-secondary">John Doe</h4>
-                            <p class="text-muted">Project Manager</p>
-                            <p class="team-bio">John has over 10 years of experience in project management, leading teams to success.</p>
-                        </div>
+    <div class="container py-5">
+        <div class="row">
+            {% for member in team_members %}
+            <div class="col-md-4 mb-4">
+                <div class="team-member-card card shadow-lg rounded-4 p-4">
+                    <div class="team-image-wrapper text-center mb-4">
+                        <img src="{{ member.image.url }}" class="img-fluid rounded-circle" alt="{{ member.name }}" style="width: 150px; height: 150px; object-fit: cover;">
                     </div>
-                </div>
-                <!-- Team Member 2 -->
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                    <div class="team-member">
-                        <img src="{% static 'img/team-2.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 2">
-                        <div class="team-info mt-3">
-                            <h4 class="text-secondary">Jane Smith</h4>
-                            <p class="text-muted">Lead Developer</p>
-                            <p class="team-bio">Jane is passionate about developing innovative solutions and building scalable apps.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Team Member 3 -->
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                    <div class="team-member">
-                        <img src="{% static 'img/team-3.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 3">
-                        <div class="team-info mt-3">
-                            <h4 class="text-secondary">Sam Wilson</h4>
-                            <p class="text-muted">UI/UX Designer</p>
-                            <p class="team-bio">Sam excels at creating intuitive designs that offer the best user experience possible.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Team Member 4 -->
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                    <div class="team-member">
-                        <img src="{% static 'img/team-4.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 4">
-                        <div class="team-info mt-3">
-                            <h4 class="text-secondary">Alex Johnson</h4>
-                            <p class="text-muted">Marketing Specialist</p>
-                            <p class="team-bio">Alex creates effective marketing strategies that connect brands with their target audience.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Team Member 5 -->
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                    <div class="team-member">
-                        <img src="{% static 'img/team-2.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 5">
-                        <div class="team-info mt-3">
-                            <h4 class="text-secondary">Maria Davis</h4>
-                            <p class="text-muted">Cyber Security Expert</p>
-                            <p class="team-bio">Maria ensures that all our systems and client data are safe from cyber threats.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Team Member 6 -->
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                    <div class="team-member">
-                        <img src="{% static 'img/team-1.jpg' %}" class="img-fluid rounded-circle shadow" alt="Team Member 6">
-                        <div class="team-info mt-3">
-                            <h4 class="text-secondary">Emily White</h4>
-                            <p class="text-muted">Graphic Designer</p>
-                            <p class="team-bio">Emily creates stunning visuals that help brands tell their story effectively.</p>
-                        </div>
+                    <h4 class="text-center text-dark font-weight-bold">{{ member.name }}</h4>
+                    <p class="text-center text-muted">{{ member.role }}</p>
+                    <p class="text-center text-muted">{{ member.description }}</p>
+                    <div class="social-links text-center">
+                        {% if member.linkedin %}
+                            <a href="{{ member.linkedin }}" target="_blank" class="btn btn-outline-primary btn-sm mx-1">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        {% endif %}
+                        {% if member.github %}
+                            <a href="{{ member.github }}" target="_blank" class="btn btn-outline-dark btn-sm mx-1">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        {% endif %}
+                        {% if member.twitter %}
+                            <a href="{{ member.twitter }}" target="_blank" class="btn btn-outline-info btn-sm mx-1">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
     <!-- Team End -->
