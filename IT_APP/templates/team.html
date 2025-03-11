@@ -23,6 +23,13 @@
 .team-member-card .social-links a:hover {
     transform: scale(1.1);
 }
+.team-image {
+    width: 150px;  /* Fixed width */
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Ensures images crop to fit */
+    aspect-ratio: 1/1; /* Forces equal width and height */
+}
+
 
 </style>
         
@@ -83,7 +90,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="team-member-card card shadow-lg rounded-4 p-4">
                         <div class="team-image-wrapper text-center mb-4">
-                            <img src="{{ member.image.url }}" class="img-fluid rounded-circle" alt="{{ member.name }}" style="width: 150px; height: 150px; object-fit: cover;">
+                            <img src="{{ member.image.url }}" class="img-fluid rounded-circle" alt="{{ member.name }}" style="width: 200px; height: 200px; object-fit: cover;">
                         </div>
                         <h4 class="text-center text-dark font-weight-bold">{{ member.name }}</h4>
                         <p class="text-center text-muted">{{ member.role }}</p>

@@ -240,6 +240,22 @@ h4 {
     font-size: 1rem;
     color: #6c757d; /* Lighter text for secondary info */
 }
+.carousel-item video {
+    object-fit: cover; /* Ensures the video covers the area without distortion */
+    height: 60vh; /* Adjust to fit within the viewport */
+    max-height: 700px; /* Prevents videos from becoming too large */
+}
+.carousel-caption {
+    max-width: 80%;
+    margin: auto;
+    bottom: 10%;
+}
+@media (max-width: 768px) {
+    .carousel-item video {
+        height: 50vh;
+    }
+}
+
 
 </style>
 
@@ -362,7 +378,7 @@ h4 {
             <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
                 <div class="d-flex justify-content-center align-items-center bg-white p-4 rounded shadow-lg">
                     <h1 class="text-dark me-3 counter-value">25</h1>
-                    <h5 class="text-dark mt-1">Thousands of successful businesses</h5>
+                    <h5 class="text-dark mt-1"> successful businesses</h5>
                 </div>
             </div>
             <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
