@@ -70,11 +70,18 @@
     <!-- Topbar End -->
 
     <!-- Navbar Start -->
-    <div class="container-fluid bg-primary">
+    
+    <div class="container-fluid bg-primary"> 
         <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                <a href="{% url 'index' %}" class="navbar-brand">
-                    <h5 class="text-white fw-bold d-block">CENTX FORMATION <span class="text-secondary">TECHNOLOGIES</span></h5>
+                <a href="{% url 'index' %}" class="navbar-brand d-flex align-items-center">
+                    <!-- Logo Image -->
+                    <img src="{% static 'img/c.png' %}" alt="Logo" class="me-2" style="height: 50px; filter: brightness(0) invert(1);">
+
+                    <!-- Brand Name -->
+                    <h5 class="text-white fw-bold d-block mb-0">
+                        CENTX FORMATION <span class="text-secondary">TECHNOLOGIES</span>
+                    </h5>
                 </a>
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -87,7 +94,6 @@
                         <a href="{% url 'all_products' %}" class="nav-item nav-link">Products</a>
                         <a href="{% url 'team' %}" class="nav-item nav-link">Team</a>
                         <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
-                       
                     </div>
                     <div class="d-none d-xl-flex flex-shrink-0">
                         <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
@@ -100,15 +106,14 @@
                         </div>
                         <div class="d-flex flex-column pe-4 border-end">
                             <span class="text-white-50">Have any questions?</span>
-                            <span class="text-secondary">Call: 0753250809 </span>
+                            <span class="text-secondary">Call: 0753250809</span>
                         </div>
-                        
-                        
                     </div>
                 </div>
             </nav>
         </div>
     </div>
+    
     
     <!-- Navbar End -->
 
