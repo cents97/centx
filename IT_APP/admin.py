@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, ProductRequest, Project, Service, ContactMessage, Testimonial, TeamMember
+from .models import Product, ProductRequest, Project, Service, ContactMessage, Testimonial, TeamMember,Category
 
 # Register your models here.
 
@@ -16,6 +16,7 @@ admin.site.register(Service)
 admin.site.register(Testimonial)
 admin.site.register(TeamMember)
 
+admin.site.register(Category)
 
 @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):

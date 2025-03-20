@@ -1,12 +1,10 @@
-<!-- products.html with pagination -->
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}All Products{% endblock %}
+{% block title %}{{ category.name }} Products{% endblock %}
 
 {% block content %}
 
-        
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5" style="position: relative; overflow: hidden;">
         <!-- Background Video -->
@@ -44,65 +42,23 @@
                 
     
     </div>
-
-
-
-<style>
-    /* Product Page Introduction */
-    .product-showcase {
-        background: #ffffff;
-        padding: 50px 20px;
-        text-align: center;
-        border-bottom: 3px solid #007bff;
-    }
-
-    .showcase-container {
-        max-width: 850px;
-        margin: 0 auto;
-    }
-
-    .showcase-title {
-        font-size: 2rem;
-        color: #222;
-        font-weight: bold;
-        margin-bottom: 15px;
-    }
-
-    .showcase-text {
-        font-size: 1.2rem;
-        color: #444;
-        line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-        .showcase-container {
-            max-width: 90%;
-        }
-    }
-</style>
-
-
-<div class="container py-5">
-    <h2 class="text-center">All Products</h2>
-    <div class="row">
-        {% for product in products %}
-            <div class="col-md-3 col-sm-6">
-                <div class="card mb-4">
-                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text">{{ product.description }}</p>
-                        <p class="card-text">{{ product.price }} UGX</p>
-                        <a href="{% url 'request_product' product.id %}" class="btn btn-primary">Request This Product</a>
+    <div class="container py-5">
+        <h2 class="text-center">{{ category.name }}</h2>
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-3 col-sm-6">
+                    <div class="card mb-4">
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <p class="card-text">{{ product.price }} UGX</p>
+                            <a href="{% url 'request_product' product.id %}" class="btn btn-primary">Request This Product</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-</div>
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5472106983159959"
-crossorigin="anonymous"></script>
-
+    
 {% endblock %}
