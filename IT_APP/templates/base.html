@@ -96,17 +96,7 @@
                         <a href="{% url 'all_products' %}" class="nav-item nav-link">Products</a>
                         <a href="{% url 'team' %}" class="nav-item nav-link">Team</a>
                 
-                        <!-- Category Dropdown -->
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categories
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
-                                {% for category in categories %}
-                                    <li><a class="dropdown-item" href="{% url 'category_products' category.slug %}">{{ category.name }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
+
                 
                         <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                     </div>
