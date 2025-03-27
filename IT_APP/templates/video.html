@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">All Tech Videos</h1>
+        <p class="text-center mb-5">Explore a collection of the best tech videos. Learn and improve your skills in web development, programming, and more.</p>
+
+        <div class="row">
+            {% for video in videos %}
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <img src="https://img.youtube.com/vi/{{ video.video_id }}/hqdefault.jpg" 
+                         class="card-img-top" alt="{{ video.title }} Thumbnail">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ video.title }}</h5>
+                        <p class="card-text mb-3">{{ video.description }}</p>
+                        <!-- Button-style link -->
+                        <a href="https://www.youtube.com/watch?v={{ video.video_id }}" 
+                           target="_blank" 
+                           class="btn btn-primary text-white mt-auto">
+                            Watch on YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

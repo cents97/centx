@@ -5,48 +5,113 @@
 
 {% block content %}
 
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5" style="position: relative; overflow: hidden;">
-        <!-- Background Video -->
-        <video class="w-100" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-            <source src="{% static 'videos/2.mp4' %}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <!-- Overlay to Darken the Video for Better Text Contrast -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
-    
-        <!-- Content Over the Video -->
-        <div class="container text-center py-5" style="position: relative; z-index: 1;">
-            <h1 class="display-2 text-white mb-4 animated slideInDown">Products</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    
-                    <li class="breadcrumb-item" aria-current="page">High-Quality IT Products for Your Business</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-    
-    
-    
-    <!-- Page Header End -->
+<style>
+    .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make the card fill the entire space */
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 200px; /* Fixed image height */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    flex-grow: 1; /* Allow the card body to take the available space */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures spacing between elements */
+    position: relative;
+}
+
+.card-title {
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+    color: #555;
+    max-height: 50px; /* Limit height of description to a shorter length */
+    overflow: hidden; /* Hide the rest of the description */
+    text-overflow: ellipsis; /* Add ellipsis (…) for overflow text */
+    transition: max-height 0.3s ease; /* Smooth transition when expanding */
+}
+
+.card-price {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card-body .btn {
+    margin-top: auto; /* This will push the button to the bottom */
+}
+
+.card:hover .card-text {
+    max-height: 150px; /* Adjust the expanded height to a more moderate size */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 0.875rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-2, .col-sm-6 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+</style>
+
+<div class="container text-center py-8" style="position: relative; z-index: 1;">
+   
+    <!-- Categories Section -->
+ <div class=" bg-dark rounded" style="display: inline-block;">
+     <h3 class="text-warning fw-bold mb-3">Explore Products by Category</h3>
+     <div class="d-flex flex-wrap justify-content-center">
+        <a href="{% url 'all_products' %}" class="btn btn-outline-warning m-2 px-4 py-2" >All_Products</a>
+         {% for category in categories %}
+             <a class="btn btn-outline-warning m-2 px-4 py-2" href="{% url 'category_products' category.slug %}">
+                 {{ category.name }}s
+             </a>
+         {% endfor %}
+     </div>
+ </div>
+</div>
 
 
-    <!-- Fact Start -->
-    <div class="container-fluid bg-secondary py-3">
-                    <h5 >
-                        Discover a range of cutting-edge IT products designed to enhance productivity and efficiency. From high-performance servers and networking devices to reliable computer accessories, we provide top-tier solutions to keep your business running smoothly.  
-                        Browse our collection and upgrade your technology today!
-                    </h5>
-                
-    
-    </div>
+ 
     <div class="container py-5">
-        <h2 class="text-center">{{ category.name }}</h2>
+       
+        
         <div class="row">
             {% for product in products %}
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-2 col-sm-6">
                     <div class="card mb-4">
                         <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
                         <div class="card-body text-center">

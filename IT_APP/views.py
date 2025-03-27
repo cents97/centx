@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import Product,  ContactMessage, Service, TeamMember
+from .models import Product,  ContactMessage, Service, TeamMember, YouTubeVideo, FAQ
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from .models import Product, Project, Category
 from .forms import ProductRequestForm
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-import json
+
 
 # Create your views here.
 
@@ -105,6 +105,22 @@ def save_contact_message(request):
             return JsonResponse({"error": "Please fill in all required fields."}, status=400)
 
     return JsonResponse({"error": "Invalid request"}, status=400)
+
+
+
+
+def video_list(request):
+    videos = YouTubeVideo.objects.all()
+
+    # Process video URLs to extract the video ID
+    for video in videos:
+        video.video_id = video.video_url.split('v=')[1].split('&')[0]  # Get the video ID
+    return render(request, 'video.html', {'videos': videos})
+
+def faq_page(request):
+    faqs = FAQ.objects.all()
+    return render(request, 'faq.html', {'faqs': faqs})
+
 
 
 

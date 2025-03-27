@@ -6,30 +6,84 @@
 
 {% block content %}
 
-        
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5" style="position: relative; overflow: hidden;">
-        <!-- Background Video -->
-        <video class="w-100" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-            <source src="{% static 'videos/2.mp4' %}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <!-- Overlay to Darken the Video for Better Text Contrast -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
+<style>
+    .product-card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 350px; /* Fixed card height */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Card lift effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    height: auto; /* Allow height to expand on hover */
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 200px; /* Fixed image height */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.product-description {
+    font-size: 0.875rem;
+    color: #555;
+    height: 60px; /* Limit description height initially */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: max-height 0.3s ease; /* Smooth transition for description */
+}
+
+.product-card:hover .product-description {
+    height: auto; /* Allow description to expand on hover */
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    margin-bottom: 15px; /* Add space between the title and description */
+}
+
+.card-price {
+    font-size: 1.125rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px; /* Add spacing between the price and button */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 0.875rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+</style> 
+
+
     
 <!-- Content Over the Video -->
-<div class="container text-center py-5" style="position: relative; z-index: 1;">
-    <h1 class="display-6 text-white mb-4 animated slideInDown">Products</h1>
-    <nav aria-label="breadcrumb animated slideInDown">
-        <!-- <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item" aria-current="page">High-Quality IT Products for Your Business</li>
-        </ol> -->
-    </nav>
-
-    <!-- Categories Section -->
-    <div class="mt-4 p-3 bg-dark rounded" style="display: inline-block;">
-        <h3 class="text-warning fw-bold mb-3">Explore by Category</h3>
+<div class="container text-center py-8" style="position: relative; z-index: 1;">
+   
+       <!-- Categories Section -->
+    <div class=" bg-dark rounded" style="display: inline-block;">
+        <h3 class="text-warning fw-bold mb-3">Explore Products by Category</h3>
         <div class="d-flex flex-wrap justify-content-center">
             {% for category in categories %}
                 <a class="btn btn-outline-warning m-2 px-4 py-2" href="{% url 'category_products' category.slug %}">
@@ -40,78 +94,27 @@
     </div>
 </div>
 
-    </div>
-    
-    
-    
-    <!-- Page Header End -->
-
-
-    <!-- Fact Start -->
-    <div class="container-fluid bg-secondary py-3">
-                    <h5>
-                        Discover a range of cutting-edge IT products designed to enhance productivity and efficiency. From high-performance servers and networking devices to reliable computer accessories, we provide top-tier solutions to keep your business running smoothly.  
-                        Browse our collection and upgrade your technology today!
-                    </h5>
-                
-    
-    </div>
-
-
-
-<style>
-    /* Product Page Introduction */
-    .product-showcase {
-        background: #ffffff;
-        padding: 50px 20px;
-        text-align: center;
-        border-bottom: 3px solid #007bff;
-    }
-
-    .showcase-container {
-        max-width: 850px;
-        margin: 0 auto;
-    }
-
-    .showcase-title {
-        font-size: 2rem;
-        color: #222;
-        font-weight: bold;
-        margin-bottom: 15px;
-    }
-
-    .showcase-text {
-        font-size: 1.2rem;
-        color: #444;
-        line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-        .showcase-container {
-            max-width: 90%;
-        }
-    }
-</style>
 
 
 <div class="container py-5">
-    <h2 class="text-center">All Products</h2>
+    
     <div class="row">
         {% for product in products %}
-            <div class="col-md-3 col-sm-6">
-                <div class="card mb-4">
+            <div class="col-md-2 col-sm-6 col-6 mb-4"> <!-- Adjusted col size for small screens -->
+                <div class="card product-card shadow-sm">
                     <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text">{{ product.description }}</p>
-                        <p class="card-text">{{ product.price }} UGX</p>
-                        <a href="{% url 'request_product' product.id %}" class="btn btn-primary">Request This Product</a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title mb-3">{{ product.name }}</h5>
+                        <p class="card-text product-description mb-4">{{ product.description }}</p>
+                        <p class="card-price mb-4">{{ product.price }} UGX</p>
+                        <a href="{% url 'request_product' product.id %}" class="btn btn-primary mt-auto">Request This Product</a>
                     </div>
                 </div>
             </div>
         {% endfor %}
     </div>
 </div>
+
 
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5472106983159959"

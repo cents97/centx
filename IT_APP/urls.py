@@ -11,5 +11,7 @@ urlpatterns = [
     path('product/<int:product_id>/request/', views.request_product, name='request_product'),
     path('products/', views.all_products, name='all_products'),  # View all products
     path("save-message/", views.save_contact_message, name="save_message"),
-     path('products/category/<slug:category_slug>/', views.category_products, name='category_products'),
+    path('products/category/<slug:category_slug>/', views.category_products, name='category_products'),
+    path('video/', views.video_list, name='video'),
+    path('faq/', views.faq_page, name='faq'),
 ]
